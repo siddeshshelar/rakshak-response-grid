@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SamaritanRouteImport } from './routes/samaritan'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as HazardsRouteImport } from './routes/hazards'
+import { Route as HazardousRouteImport } from './routes/hazardous'
+import { Route as CommandRouteImport } from './routes/command'
+import { Route as BlackspotsRouteImport } from './routes/blackspots'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AmbulanceRouteImport } from './routes/ambulance'
+import { Route as AiDetectionRouteImport } from './routes/ai-detection'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SamaritanRoute = SamaritanRouteImport.update({
+  id: '/samaritan',
+  path: '/samaritan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HazardsRoute = HazardsRouteImport.update({
+  id: '/hazards',
+  path: '/hazards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HazardousRoute = HazardousRouteImport.update({
+  id: '/hazardous',
+  path: '/hazardous',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommandRoute = CommandRouteImport.update({
+  id: '/command',
+  path: '/command',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlackspotsRoute = BlackspotsRouteImport.update({
+  id: '/blackspots',
+  path: '/blackspots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmbulanceRoute = AmbulanceRouteImport.update({
+  id: '/ambulance',
+  path: '/ambulance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiDetectionRoute = AiDetectionRouteImport.update({
+  id: '/ai-detection',
+  path: '/ai-detection',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-detection': typeof AiDetectionRoute
+  '/ambulance': typeof AmbulanceRoute
+  '/analytics': typeof AnalyticsRoute
+  '/blackspots': typeof BlackspotsRoute
+  '/command': typeof CommandRoute
+  '/hazardous': typeof HazardousRoute
+  '/hazards': typeof HazardsRoute
+  '/login': typeof LoginRoute
+  '/samaritan': typeof SamaritanRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-detection': typeof AiDetectionRoute
+  '/ambulance': typeof AmbulanceRoute
+  '/analytics': typeof AnalyticsRoute
+  '/blackspots': typeof BlackspotsRoute
+  '/command': typeof CommandRoute
+  '/hazardous': typeof HazardousRoute
+  '/hazards': typeof HazardsRoute
+  '/login': typeof LoginRoute
+  '/samaritan': typeof SamaritanRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-detection': typeof AiDetectionRoute
+  '/ambulance': typeof AmbulanceRoute
+  '/analytics': typeof AnalyticsRoute
+  '/blackspots': typeof BlackspotsRoute
+  '/command': typeof CommandRoute
+  '/hazardous': typeof HazardousRoute
+  '/hazards': typeof HazardsRoute
+  '/login': typeof LoginRoute
+  '/samaritan': typeof SamaritanRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-detection'
+    | '/ambulance'
+    | '/analytics'
+    | '/blackspots'
+    | '/command'
+    | '/hazardous'
+    | '/hazards'
+    | '/login'
+    | '/samaritan'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-detection'
+    | '/ambulance'
+    | '/analytics'
+    | '/blackspots'
+    | '/command'
+    | '/hazardous'
+    | '/hazards'
+    | '/login'
+    | '/samaritan'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-detection'
+    | '/ambulance'
+    | '/analytics'
+    | '/blackspots'
+    | '/command'
+    | '/hazardous'
+    | '/hazards'
+    | '/login'
+    | '/samaritan'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiDetectionRoute: typeof AiDetectionRoute
+  AmbulanceRoute: typeof AmbulanceRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  BlackspotsRoute: typeof BlackspotsRoute
+  CommandRoute: typeof CommandRoute
+  HazardousRoute: typeof HazardousRoute
+  HazardsRoute: typeof HazardsRoute
+  LoginRoute: typeof LoginRoute
+  SamaritanRoute: typeof SamaritanRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/samaritan': {
+      id: '/samaritan'
+      path: '/samaritan'
+      fullPath: '/samaritan'
+      preLoaderRoute: typeof SamaritanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hazards': {
+      id: '/hazards'
+      path: '/hazards'
+      fullPath: '/hazards'
+      preLoaderRoute: typeof HazardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hazardous': {
+      id: '/hazardous'
+      path: '/hazardous'
+      fullPath: '/hazardous'
+      preLoaderRoute: typeof HazardousRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/command': {
+      id: '/command'
+      path: '/command'
+      fullPath: '/command'
+      preLoaderRoute: typeof CommandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blackspots': {
+      id: '/blackspots'
+      path: '/blackspots'
+      fullPath: '/blackspots'
+      preLoaderRoute: typeof BlackspotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ambulance': {
+      id: '/ambulance'
+      path: '/ambulance'
+      fullPath: '/ambulance'
+      preLoaderRoute: typeof AmbulanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-detection': {
+      id: '/ai-detection'
+      path: '/ai-detection'
+      fullPath: '/ai-detection'
+      preLoaderRoute: typeof AiDetectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +237,26 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiDetectionRoute: AiDetectionRoute,
+  AmbulanceRoute: AmbulanceRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  BlackspotsRoute: BlackspotsRoute,
+  CommandRoute: CommandRoute,
+  HazardousRoute: HazardousRoute,
+  HazardsRoute: HazardsRoute,
+  LoginRoute: LoginRoute,
+  SamaritanRoute: SamaritanRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
