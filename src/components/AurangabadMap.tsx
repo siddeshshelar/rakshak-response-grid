@@ -26,10 +26,9 @@ const RING: Record<Incident["type"], string> = {
   active: "var(--primary)",
 };
 
-// Aurangabad / Chhatrapati Sambhajinagar bounding box (lon_min,lat_min,lon_max,lat_max)
-const BBOX = "75.2400,19.8000,75.4900,19.9650";
-const MARKER = "19.8762,75.3433";
-const OSM_SRC = `https://www.openstreetmap.org/export/embed.html?bbox=${BBOX}&layer=mapnik&marker=${MARKER}`;
+// Official RAKSHAK operational layer — Google My Maps (Aurangabad / Chh. Sambhajinagar)
+const GMAPS_SRC =
+  "https://www.google.com/maps/d/u/0/embed?mid=1MvzdlwrJ5YuHhOxaXQnrA6fal-UcgAM&ehbc=2E312F";
 
 export function AurangabadMap({
   height = 560,
