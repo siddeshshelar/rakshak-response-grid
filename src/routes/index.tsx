@@ -273,6 +273,8 @@ function AurangabadFocus() {
     </section>
   );
 }
+
+function NetworkStats() {
   const stats = [
     { l: "Districts Covered", v: "36 / 36" },
     { l: "Highway km Monitored", v: "1,71,000" },
