@@ -42,18 +42,19 @@ export function AurangabadMap({
       className="relative overflow-hidden panel grid-bg scan-line"
       style={{ height }}
     >
-      {/* Real OSM tiles */}
+      {/* Live Google My Maps operational layer */}
       <iframe
-        title="Aurangabad live operational map"
-        src={OSM_SRC}
+        title="RAKSHAK · Aurangabad operational map"
+        src={GMAPS_SRC}
         className="absolute inset-0 h-full w-full"
         style={{
           border: 0,
           filter:
-            "invert(0.92) hue-rotate(180deg) saturate(0.7) brightness(0.95) contrast(1.05)",
+            "invert(0.92) hue-rotate(180deg) saturate(0.75) brightness(0.95) contrast(1.05)",
         }}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        allowFullScreen
       />
 
       {/* Tactical tint overlay */}
