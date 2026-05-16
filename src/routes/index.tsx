@@ -233,7 +233,46 @@ function CommandPreview() {
   );
 }
 
-function NetworkStats() {
+function AurangabadFocus() {
+  return (
+    <section className="border-b border-border">
+      <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-12 gap-10 items-center">
+        <div className="lg:col-span-5 space-y-5 order-2 lg:order-1">
+          <SectionHead
+            eyebrow="District Focus · MH-20"
+            title="Aurangabad live operational grid."
+            desc="Chhatrapati Sambhajinagar (Aurangabad) Smart-City pilot — every CCTV, ambulance, hazardous convoy and black-spot streamed onto a single tactical map."
+            align="left"
+          />
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            {[
+              "8 active incident pings across CIDCO, Waluj MIDC and Jalna Road",
+              "12 RAKSHAK units patrolling NH-52 / NH-753 corridor",
+              "Real-time OSM tile fusion with city CCTV + IoT mesh",
+              "Auto-routing to MGM, Ghati & Kamalnayan Bajaj hospitals",
+            ].map((x) => (
+              <li key={x} className="flex gap-3">
+                <ShieldCheck className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                {x}
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link to="/command" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-primary/50 bg-primary/10 text-sm font-medium hover:bg-primary/20 transition-colors">
+              Open District Console <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/blackspots" className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md border border-border text-sm font-medium hover:bg-surface transition-colors">
+              View Black-spots
+            </Link>
+          </div>
+        </div>
+        <div className="lg:col-span-7 order-1 lg:order-2">
+          <AurangabadMap height={560} />
+        </div>
+      </div>
+    </section>
+  );
+}
   const stats = [
     { l: "Districts Covered", v: "36 / 36" },
     { l: "Highway km Monitored", v: "1,71,000" },
