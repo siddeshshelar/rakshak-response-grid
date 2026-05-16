@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPanel } from "@/components/MapPanel";
+import { AurangabadMap } from "@/components/AurangabadMap";
 import { Logo } from "@/components/ConsoleLayout";
 import {
   Siren, ShieldCheck, Activity, Ambulance, Brain, ArrowRight,
