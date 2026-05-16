@@ -25,6 +25,7 @@ function Landing() {
       <PartnersStrip />
       <CapabilitiesGrid />
       <CommandPreview />
+      <AurangabadFocus />
       <NetworkStats />
       <GoldenHour />
       <CTAFooter />
